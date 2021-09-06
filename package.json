@@ -1,0 +1,15 @@
+{
+  "name": "windowsbaseelectron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "windows": "electron ."
+  },
+  "author": "Chris Elcombe",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^14.0.0"
+  }
+}
