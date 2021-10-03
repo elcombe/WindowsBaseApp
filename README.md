@@ -1,6 +1,6 @@
 # Windows Base App
 
-This is a base app for future Windows applications. Using electron.
+This is a base app for future Windows applications. Using Electron and React.
 
 ## Setup
 
@@ -10,7 +10,7 @@ npm install
 
 ## Running
 ```
-npm run windows
+npm run dev
 ```
 
 ## License
