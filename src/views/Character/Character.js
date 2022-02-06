@@ -4,13 +4,17 @@ import walkUp from '../../assets/characters/dog/walk_up.gif';
 import walkDown from '../../assets/characters/dog/walk_down.gif';
 import walkLeft from '../../assets/characters/dog/walk_left.gif';
 import walkRight from '../../assets/characters/dog/walk_right.gif';
-import {keyContext, UP, DOWN, LEFT, RIGHT} from '../../App.js'; 
+import {keyContext, xContext, yContext, UP, DOWN, LEFT, RIGHT, screenWidth, screenHeight} from '../../App.js'; 
+
+export const characterSize = 16;
 
 function Character() {
 
     let sprite = walkUp;
 
     const [keyPressed] = useContext(keyContext);
+    const [x] = useContext(xContext);
+    const [y] = useContext(yContext);
     switch(keyPressed) {
         case UP:
             sprite = walkUp;
@@ -26,13 +30,27 @@ function Character() {
             break; 
     }
 
+    const characterStyle = {
+        marginLeft: `${x}px`,
+        marginTop: `${y}px`,
+        position: 'absolute',
+        left: 0
+    }
+
+    const imageDivStyle = {
+        borderStyle: 'solid',
+        height: screenHeight,
+        width: screenWidth,
+        margin: '0 auto',
+        marginTop: 10,
+        position: 'relative'
+    }
 
     return (
         <div>
             <Link to={`/`}>Go back to main page</Link>
-            <div>
-                <img src={sprite} />
-
+            <div style={imageDivStyle}>
+                <img src={sprite} style={characterStyle} />
             </div>
         </div>
     );
